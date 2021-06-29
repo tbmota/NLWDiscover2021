@@ -1,0 +1,67 @@
+<!--node não roda html, ejs roda-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <!-- usa o padrão utf-8 (da língua portuguesa, aceita cedilha, acento...) -->
+    <meta charset="UTF-8">
+
+    <!-- compatibilidade com o edge -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- View Port-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar Sala - Rocket - Rocket.Q</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/home.css">
+
+    <!-- Fontes -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="home" class="content">
+        <header>
+            <img src="images/logo.svg" alt="Rocket.Q Logo"/>
+        </header>
+
+        <div id="bg"> <!--#bg enter já cria a div-->
+            <div class="ball top"></div>
+            <div class="ball bottom"></div>
+        </div> 
+
+
+        <main>
+            <div class="container"> <!-- .container aparece: <div class="containe"></div>-->
+                <section>
+                    <h2>Entre como participante</h2>
+                    <form action=""> <!--vai enviar pra algum lugar-->  <!--como tem inputs juntos faço dentro de um formulário-->
+                        <label class="sr-only" for="room-id">Código da Sala</label> <!--(room-id) não aparece, é para os leitores de busca (temos que conectar com o input)  / sr-only(screen-only) deixa invisível o label mas os motores de busca o acham-->
+                        <input type="number" id="room-id" placeholder="Código da sala"/><!--esse código id faz o label pertencer ao input (conecta os 2, quando clico na label, já seleciona o input-->
+                        <button>
+                            <img src="images/enter-room.svg" alt="Entrar na sala"/> Entrar na sala</button>
+                    </form>
+                </section>
+
+                <div class="separator"> <!--separador-->
+                    <div></div> <!--uso ctrl c + ctrl v o vscode copia a linha por completo (sem precisar selecionar a linha)-->
+                    <div>ou</div>
+                    <div></div>
+                </div>
+                
+                <section>
+                    <h2>Crie sua própria sala de forma fácil</h2>
+                    <a href="create-room.html" class="button outlined">
+                        <img src="images/user.svg" alt="Criar sala"/> Criar sala  <!--alt seta pra cima move a linha pra cima--> <!--imagem exportada do figma rocket-->
+                    </a>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

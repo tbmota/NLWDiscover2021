@@ -1,0 +1,116 @@
+*{ /*resetando a estlização da página*/
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{ 
+    --black: #0D114F; /*estou usando variáveis em css, --nome da variável*/
+    --white: #FAFAFA;
+    --red: #E83F5B;
+    --light-blue: #E0ECFF;
+    --blue: #3485FF;
+    --background: #F6FAFF;
+    --overlay: #040911;
+    --icons-details: #A5B0C1;
+
+    --grey-dark: #4d5e77;
+    --grey-blue: #A1B2CD;
+    --grey-light: #E5EAF1;
+    --grey-medium: #eaecf2;
+
+    /*1rem = 16px = 100% do tamanho padrão da tela (User Agent) (aumentando ou diminuindo o navegador, o tamanho acompanha, rem tem responsividade)*/
+    font-size: 62.5% /*coloquei dentro do html, assim determino o tamanho padrão da página = 10px*/
+} /*o padrão é 16, transformei o padrão em 10 para facilitar os cálculos, agora só divido poir 10*/
+
+body{
+    display: flex;
+    height: 100vh; /*view height: pega o total vertical da tela = 100vh, o body vai ser o tamanho total da tela*/ /*view width: 100vw 100% da horizontal da tela*/
+    background: var(--background); /*usando variável em css*/
+}
+
+/*setando*/
+body, button, input, textarea{
+    font-size: clamp(14px, 1.6rem, 2vw); /*intervalo de tamanho*/ /*font-size no body não engloba button, input e textarea*/ /*clamp(no menor tamanho vai ficar sempre 14px, padrão = 16rem, máximo (televisão) = 2vw  (boas práticas para responsividade)*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sr-only{ /* pra acessibilidade */
+    /* display: none o label deixa de existir */
+    position: absolute; /*para de respeitar o padrão, este fica por cima de tudo, como se não estivesse numa div*/
+    height: 1px; 
+    width: 1px; /*é só um ponto na tela*/
+    padding: 0;
+    margin: -1px; /* 1px foi pra cima e saiu da tela*/
+    overflow: hidden; /*pra não ter barra de rolagem*/
+    clip-path: rect(0, 0, 0, 0); /*posiciono no canto*/
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* input and buttons */
+input, button, .button{
+    border-radius: .8rem;
+    height: 5rem;
+}
+
+button, .button{
+    font-family: 'Poppins';
+    font-weight: 500;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue);
+    color: var(--white);
+    transition: filter .2s;
+    cursor: pointer;
+}
+
+button :hover, .button:hover{
+    filter: brightness(1.2); /*aplica um brilho no filter (botão)*/
+}
+
+button > img,
+.button > img{
+    margin-right: 1rem;
+    width: 2rem;
+}
+
+button.outlined,
+.button.outlined{
+    background: var(--white);
+    color: var(--blue);
+    border: .2rem solid var(--blue);
+}
+
+button.red,
+.button.red{
+    background: var(--red);
+    color: var(--white);
+}
+
+button.grey,
+.button.grey{
+    background: var(--grey-light);
+    color: var(--grey-dark);
+}
+
+/*HEADER*/
+.content header{
+    width: 80%;
+    margin: 3.5rem auto;
+}
+
+.content header img{
+    width: 16.7rem;
+}
+
+
